@@ -2,17 +2,15 @@
 
 package ClaqRadio::Ices;
 
-use File::Copy;
-
 use URI;
 use WWW::Curl::Easy;
 use JSON 'decode_json';
 
-use File::Basename qw(dirname);
-use Cwd  qw(abs_path);
-use lib dirname(dirname abs_path $0);
-
 use ClaqRadio::Config;
+
+use Exporter qw(import);
+
+our @EXPORT_OK = qw(ices_init ices_get_next);
 
 sub get_next(){
     my $uri = URI->new( ClaqRadio::Config->host . "plays.json"  );
@@ -34,7 +32,6 @@ sub get_next(){
 }
 
 sub ices_init{
-    srand;
 }
 
 sub ices_get_next{
@@ -46,7 +43,5 @@ sub ices_get_next{
     }
     return "";
 }
-
-ices_init();
 
 371;
