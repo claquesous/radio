@@ -1,15 +1,9 @@
 #!/usr/bin/perl -w
 
-package ClaqRadio;
+use ClaqRadio::Ices;
 
-use File::Copy;
-
-use File::Basename qw(dirname);
-use Cwd  qw(abs_path);
-use lib dirname(dirname abs_path $0);
-
-use ClaqRadio::Ices qw(ices_init ices_get_next);
-
-ices_init();
+sub ices_get_next() {
+    return ClaqRadio::Ices->ices_get_next();
+}
 
 371;
