@@ -1,5 +1,3 @@
-#!/usr/bin/perl -w
-
 package ClaqRadio::Ices;
 
 use URI;
@@ -35,10 +33,10 @@ sub ices_init{
 }
 
 sub ices_get_next{
-    $json_result = get_next();
+    my $json_result = get_next();
     if ( $json_result ){
-      %json = %{decode_json($json_result)};
-      %song = %{$json{'song'}};
+      my %json = %{decode_json($json_result)};
+      my %song = %{$json{'song'}};
       return $song{'path'};
     }
     return "";
