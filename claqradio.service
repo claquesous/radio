@@ -1,0 +1,13 @@
+[Unit]
+Description=Claq Radio
+After=icecast.service
+
+[Service]
+ExecStart=/usr/bin/ices -c /etc/ices/claqradio.conf
+User=ices
+Group=icecast
+Environment=PERLLIB=/etc/ices/modules
+
+[Install]
+WantedBy=multi-user.target
+
