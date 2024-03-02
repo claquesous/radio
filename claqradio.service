@@ -7,6 +7,10 @@ ExecStart=/usr/bin/ices -c /etc/ices/claqradio.conf
 User=ices
 Group=icecast
 Environment=PERLLIB=/etc/ices/modules
+Restart=on-failure
+RestartSec=2
+RestartSteps=4
+RestartMaxDelaySec=10
 
 [Install]
 WantedBy=multi-user.target
