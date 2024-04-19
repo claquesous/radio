@@ -1,0 +1,15 @@
+[Unit]
+Description=Claqradio backend Rails server
+After=network.target
+
+[Service]
+User=ices
+Group=ices
+WorkingDirectory=/home/ices/radio-backend
+Environment=RAILS_ENV=production
+EnvironmentFile=/home/ices/.claqradiorc
+ExecStart=/home/ices/.asdf/shims/bundle exec rails s
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

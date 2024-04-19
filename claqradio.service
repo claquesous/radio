@@ -1,6 +1,6 @@
 [Unit]
 Description=Claq Radio
-After=icecast.service
+After=icecast.service claqradio-backend.service
 
 [Service]
 ExecStart=/usr/bin/ices -c /etc/ices/claqradio.conf
