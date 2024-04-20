@@ -31,3 +31,9 @@ A sample ices config file which should be modified to match your icecast configu
 
 Perl modules used by ices to connect to your instance of [ClaqRadio Backend](https://github.com/claquesous/radio-backend). See that repo for more instructions. Update the Config file with your chosen port and remove `.sample`. The service assumes this will be available in `/etc/ices`.
 
+### nginx config
+
+- claqradio.nginx.conf
+
+An example nginx config.
+
