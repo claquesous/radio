@@ -9,6 +9,8 @@ Group=icecast
 Environment=PERLLIB=/etc/ices/modules
 Restart=on-failure
 RestartSec=2
+StartLimitInterval=300
+StartLimitBurst=5
 RestartSteps=4
 RestartMaxDelaySec=10
 
