@@ -1,0 +1,14 @@
+[Unit]
+Description=Claqradio frontend NextJS server
+After=network.target
+
+[Service]
+User=nextjs
+Group=nextjs
+WorkingDirectory=/home/nextjs/radio-frontend-next
+Environment=RADIO_BACKEND_PATH=http://localhost:3000/api/
+ExecStart=/home/nextjs/.asdf/shims/npm run start
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

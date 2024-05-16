@@ -12,8 +12,9 @@ You must have perl, icecast and ices v0.4 installed. (If you want to reencode to
 
 - claqradio.service
 - claqradio-backend.service
+- claqradio-frontend.service
 
-If you have systemctl, these can be added to automatically start your rails backend server as well as your ices server and mount it to your icecast service.
+If you have systemctl, these can be added to automatically start your nextjs frontend server, rails backend server as well as your ices server and mount it to your icecast service.
 
 See systemctl manuals to determine how to install and enable these services.
 
