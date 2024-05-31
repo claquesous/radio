@@ -7,6 +7,7 @@ ExecStart=/usr/bin/ices -c /etc/ices/claqradio.conf
 User=ices
 Group=icecast
 Environment=PERLLIB=/etc/ices/modules
+Environment=CLAQRADIO_STREAM_URL=http://localhost:3000/private/streams/1
 Restart=on-failure
 RestartSec=2
 StartLimitInterval=300

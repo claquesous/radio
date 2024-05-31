@@ -1,9 +1,0 @@
-package ClaqRadio::Config;
-use strict;
-use warnings;
-
-sub host {
-  return 'http://localhost:3000/private';
-}
-
-371;

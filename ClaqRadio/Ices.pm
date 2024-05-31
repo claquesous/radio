@@ -3,14 +3,12 @@ package ClaqRadio::Ices;
 use URI;
 use JSON 'decode_json';
 
-use ClaqRadio::Config;
-
 use Exporter qw(import);
 
 our @EXPORT_OK = qw(ices_init ices_get_next);
 
 sub get_next(){
-    my $uri = URI->new( ClaqRadio::Config->host . "plays.json"  );
+    my $uri = URI->new( $ENV{CLAQRADIO_STREAM_URL} . "/plays.json"  );
     my $curlcmd = `curl -s -X POST $uri`;
 
     return $curlcmd;
