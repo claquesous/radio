@@ -6,6 +6,8 @@ This repo contains configuration files to run your very own instance of the not 
 
 You must have perl, icecast and ices v0.4 installed. (If you want to reencode to a standard bitrate, you'll need to have included liblame support in ices.) See this [guide](https://ardsite.medium.com/internet-radio-server-with-icecast2-and-ices-mp3-stream-42a20e2d4713) for help installing dependencies on an Ubuntu system.
 
+You must also install the URI and JSON perl modules.
+
 ## Included files
 
 ### Systemctl services
