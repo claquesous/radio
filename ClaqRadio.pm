@@ -3,9 +3,11 @@
 use JSON;
 
 my $metadata;
+my $stream_id = $ENV{STREAM_ID};
 
 sub ices_get_next {
-    my $url = $ENV{CLAQRADIO_STREAM_URL} . "/plays.json";
+    my $base_url = $ENV{CLAQRADIO_STREAM_URL} || "http://localhost:3000";
+    my $url = "$base_url/private/streams/$stream_id/plays";
     my $json_result = `curl -s -X POST $url`;
     if ( $json_result ){
       my %json = %{decode_json($json_result)};
@@ -21,4 +23,3 @@ sub ices_get_metadata {
 }
 
 return 1;
-
