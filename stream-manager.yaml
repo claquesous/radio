@@ -1,0 +1,22 @@
+aws:
+  region: "us-east-1"
+  sqs_queue_url: "https://sqs.us-east-1.amazonaws.com/123456789012/stream-events"
+  dynamodb_table: "stream_processes"
+
+ices:
+  binary_path: "/usr/bin/ices"
+  config_dir: "/etc/radio-stream-manager/ices"
+  log_dir: "/var/log/radio-stream-manager"
+
+icecast:
+  host: "localhost"
+  port: 8000
+  password: "your_icecast_password"
+
+api:
+  base_url: "http://localhost:3000"
+  timeout: "30s"
+
+logging:
+  level: "info"
+  format: "json"

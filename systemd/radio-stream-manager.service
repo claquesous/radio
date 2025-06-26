@@ -1,0 +1,35 @@
+[Unit]
+Description=Radio Stream Manager
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=radio
+Group=radio
+WorkingDirectory=/opt/radio-stream-manager
+ExecStart=/opt/radio-stream-manager/radio-stream-manager
+Restart=always
+RestartSec=5
+KillMode=mixed
+TimeoutStopSec=30
+
+# Environment variables
+Environment=CONFIG_PATH=/etc/radio-stream-manager/config.yaml
+Environment=AWS_REGION=us-east-1
+EnvironmentFile=-/etc/radio-stream-manager/environment
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/log/radio-stream-manager /etc/radio-stream-manager/ices /tmp
+
+# Resource limits
+LimitNOFILE=65536
+MemoryHigh=512M
+MemoryMax=1G
+
+[Install]
+WantedBy=multi-user.target
