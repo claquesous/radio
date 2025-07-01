@@ -1,6 +1,6 @@
 [Unit]
 Description=Radio Stream Manager
-After=network.target
+After=icecast.service claqradio-backend.service
 Wants=network-online.target
 
 [Service]
