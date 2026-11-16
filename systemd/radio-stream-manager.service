@@ -12,6 +12,10 @@ ExecStart=/opt/radio-stream-manager/radio-stream-manager
 Restart=always
 RestartSec=5
 KillMode=mixed
+# Liquidsoap caches its compiled script under $XDG_CACHE_HOME/liquidsoap;
+# ProtectSystem/ProtectHome leave no default location writable.
+CacheDirectory=liquidsoap
+Environment=XDG_CACHE_HOME=/var/cache
 TimeoutStopSec=30
 
 # Environment variables
@@ -24,7 +28,7 @@ NoNewPrivileges=true
 PrivateTmp=true
 ProtectSystem=strict
 ProtectHome=true
-ReadWritePaths=/var/log/radio-stream-manager /etc/radio-stream-manager/ices /tmp
+ReadWritePaths=/var/log/radio-stream-manager /tmp
 
 # Resource limits
 LimitNOFILE=65536

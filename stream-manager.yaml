@@ -3,10 +3,8 @@ aws:
   sqs_queue_url: "https://sqs.us-east-1.amazonaws.com/123456789012/stream-events"
   dynamodb_table: "stream_processes"
 
-ices:
-  binary_path: "/usr/bin/ices"
-  config_dir: "/etc/radio-stream-manager/ices"
-  log_dir: "/var/log/radio-stream-manager"
+liquidsoap:
+  binary_path: "/usr/bin/liquidsoap"
 
 icecast:
   host: "localhost"
